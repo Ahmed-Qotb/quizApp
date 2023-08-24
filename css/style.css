@@ -1,0 +1,20 @@
+/* ? global */
+
+body {
+    font-family: 'Anton', sans-serif;
+    background-image: url(/img/3896663.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    color: rgb(188, 188, 188);
+}
+
+.layer{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* section 1 */
+.parent{
+    width: 500px;
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz APP</title>
+    <!-- ! google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+    <!-- ! boot strab -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <!-- ! font awesome -->
+    <link rel="stylesheet" href="./css/all.min.css">
+
+    <!-- ! main style sheet -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- ! layer div to darken back ground -->
+    <div
+        class="layer position-absolute start-0 end-0 top-0 bottom-0 d-flex justify-content-center align-items-center flex-column">
+
+        <!-- ! heading -->
+        <h1 class="text fa-fade">Quiz APP</h1>
+
+        <!-- ! home section for submiting quiz type-->
+        <section class="home">
+
+            <div class="container bg-black rounded-5 px-3 ">
+                <div class="parent  mx-5 pb-5">
+                    <h3 class="my-5 pb-5 pt-3 text-center">Select Your Quiz Type</h3>
+                    <!-- ? select for Catigory-->
+                    <div class="mb-3">
+                        <label for="" class="form-label">Catigory</label>
+                        <select class="form-select form-select-lg" name="" id="catigory">
+                            <option selected value="">Any Category</option>
+                            <option value="9">General Knowledge</option>
+                            <option value="27">Animals</option>
+                            <option value="19">Science: Mathematics</option>
+                            <option value="18">Science: Computers</option>
+                            <option value="22">Geography</option>
+                        </select>
+                    </div>
+                    <!-- ? select for Diffeculty-->
+                    <div class="mb-3">
+                        <label for="" class="form-label">Diffeculty</label>
+                        <select class="form-select form-select-lg" name="" id="diffeculty">
+                            <option selected value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+                    <!-- ? input for chosing question number -->
+                    <label for="">How many questions would you like ?</label>
+                    <input type="number" class="form-control" name="" id="questionNumber">
+                    <!-- ?button for submiting quiz type -->
+                    <div class="py-3">
+                        <span class="text-danger" id="alert"></span>
+                        <button class="btn btn-outline-dark text-white float-end w-25 border-white"
+                            id="makeQuiz">submit</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ! quiz section -->
+        <section class="questions">
+            <div class="container bg-black rounded-5 px-3">
+                <div class="parent mx-5 pb-4">
+                    <!-- ? div to show how many questions are left -->
+                    <div class="pt-2 d-flex justify-content-between">
+                        <div>
+                            <span id="currentQuestion"></span> of <span id="totalQuestions"></span>
+                        </div>
+                        <!-- ? category div -->
+                        <div id="showCat">
+
+                        </div>
+                    </div>
+
+
+                    <!-- ? question div -->
+                    <div>
+                        <p class="h4 my-5 pb-5 pt-3 text-center" id="question">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, consequuntur.
+                        </p>
+                    </div>
+
+                    <!-- ? answers or choices div -->
+                    <div class="row g-3" id="choices">
+                        <!-- <div class="col-lg-6">
+                            <div>
+                                <button class="btn btn-outline-dark text-white w-100 border-2 border-white"
+                                    id="submitQuizType">submit</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div>
+                                <button class="btn btn-outline-dark text-white w-100 border-2 border-white"
+                                    id="submitQuizType">submit</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div>
+                                <button class="btn btn-outline-dark text-white w-100 border-2 border-white"
+                                    id="submitQuizType">submit</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div>
+                                <button class="btn btn-outline-dark text-white w-100 border-2 border-white"
+                                    id="submitQuizType">submit</button>
+                            </div>
+                        </div> -->
+                    </div>
+
+                    <!-- ? button to submit answers -->
+                    <div class="pt-5">
+                        <!-- * span for showing right or wrong answer -->
+                        <span>
+                            <i class="fa-solid fa-xmark fa-bounce text-danger fs-2" id="xmark"></i>
+                            <i class="fa-solid fa-check fa-bounce text-info fs-2" id="check"></i>
+                        </span>
+                        <!-- <button class="btn btn-outline-dark text-white float-end w-25 border-white"
+                            id="submitQuizBtn">Next Question</button> -->
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ! end quiz section -->
+        <section class="endQuiz">
+            <div class="container bg-black rounded-5 px-3">
+                <div class="parent mx-5 pb-4">
+                    <!-- ? show score div -->
+                    <div class="text-center py-5">
+                        <p class="h3">
+                            your score is : ( <span id="result"> </span> )
+                        </p>
+                    </div>
+
+                    <!-- ? try again button (redirect to home page) -->
+                    <div class="pt-5 text-center">
+                        <button class="btn btn-outline-dark text-white w-50 border-white" id="tryAgainBtn">Try Again ?
+                            :) </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- ! js files -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script src="./js/script.js" type="module"></script>
+</body>
+
+</html>
